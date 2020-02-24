@@ -2,6 +2,7 @@ nav{
     font-family: 'Bungee', sans-serif;
     position: fixed;
     height: 100px;
+    top: 0;
     width: 100%;
     z-index: auto;
     background-color: #4056A1;
