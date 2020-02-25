@@ -1,15 +1,17 @@
 nav{
-    font-family: 'Bungee', sans-serif;
     position: fixed;
+    font-family: 'Bungee', sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     height: 100px;
     top: 0;
     width: 100%;
     z-index: auto;
     background-color: #4056A1;
     color: #FFFF;
-    padding: 1.5em;
    }
   
-   span{
+   .mlogo{
      font-family: 'Bungee', sans-serif;
-   }
+   } 
