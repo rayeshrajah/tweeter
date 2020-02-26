@@ -33,9 +33,6 @@
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-
     <!--Counter for textArea field-->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
       
@@ -63,7 +60,7 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form action = "POST" method="/tweets">
+        <form action = "POST" method="/tweets" class="tweet-form">
           <textarea name="text" placeholder="What are you humming about?"></textarea>
           <div class="tweetbtn">
             <button class="button" type="submit">Tweet</button>
@@ -74,5 +71,7 @@
       <section id="tweets-container">
       </section>
     </main>
+    <!-- Client JS -->
+    <script type="text/javascript" src="/scripts/client.js"></script>
   </body>
 </html>
