@@ -11,7 +11,7 @@
 textarea{
 background-color: #f4f1ec;
 resize: none;
-width: 1140px;
+width: 100%;
 height: 40px;
 margin: 0;
 border-width:0 0 5px;
@@ -38,3 +38,16 @@ border-color: black;
     transition-duration: 0.4s;
     cursor: pointer;
   }
+
+.error{
+    display: none;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 2px solid #dc3545;
+    border-radius: 4px;
+    color: red;
+    text-align: center;
+}
+.usertext{
+    word-break: break-all;
+}

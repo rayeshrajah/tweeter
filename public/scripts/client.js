@@ -15,7 +15,7 @@ const createTweetElement = function(tweetData) {
   let $pImg = $('<p>');
   let $img = $(`<img src=${tweetData.user.avatars}>`);
   let $heading1 = $('<h6>');
-  let $pContent = $('<p>');
+  let $pContent = $('<p class="usertext">');
   let $footer = $('<footer>');
   let $heading2 = $('<h6>');
   let $div = $('<div>');
@@ -47,9 +47,13 @@ const createTweetElement = function(tweetData) {
     .append($i1)
     .append($i2)
     .append($i3);
-      
+
   return $article;
 };
+//sliding the form up and down using icon;
+$(".iconbtn").click(function(){
+    $(".new-tweet").slideToggle();
+});
 //looping over the dynamic database, using the createTweet
 //for each object and appending those object to the section tag with id: #tweets-container
 const renderTweets = function(tweets) {
@@ -63,18 +67,24 @@ const renderTweets = function(tweets) {
 };
 
 $(".tweet-form").on("submit", function(event) {
-  // const formHandler = function(){
+    event.preventDefault();
+    // const formHandler = function(){
+  $('.error').empty();
+  $('.error').hide();
   const MAXLENGTH = 140;
-  let $isTextAreaEmpty = $("textarea").val().length;
+  let $isTextAreaEmpty = $("textarea").val();
 
-  if (MAXLENGTH <= $isTextAreaEmpty) {
-    alert("You cannot tweet because you went over the amount of letters!");
+  if (MAXLENGTH < $isTextAreaEmpty.length) {
+    $('.error').append('<i class="fas fa-exclamation-triangle"><span>Error: Went Over Board with the amount of letters please reduce it</span><i class="fas fa-exclamation-triangle"></i>');
+    $('.error').slideDown("slow");
     return;
+
   } else if ($isTextAreaEmpty === "") {
-    alert("You have entered nothing");
+    $('.error').append('<i class="fas fa-exclamation-triangle"><span>Error: Text area is empty please type something before posting</span><i class="fas fa-exclamation-triangle"></i>');
+    $('.error').slideDown("slow");  
     return;
   }
-  event.preventDefault();
+  
   $.ajax({
     method: "POST",
     url: `${server}/tweets`,
@@ -94,8 +104,12 @@ const loadTweets = function() {
     }
   });
 };
-
 loadTweets();
 
-//Renders function that renders the tweets to the page.
-//renderTweets(data);
+//Text area function that auto height when presssing enter or overflowing
+$('textarea').each(function () {
+    this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
+  }).on('input', function () {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+  });

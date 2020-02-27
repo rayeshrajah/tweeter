@@ -45,6 +45,7 @@
     </div>
     <div class="icon">
       <span>Write a new tweet</span>
+      <button class="iconbtn"><i class="fas fa-arrow-down"></i></button>
     </div>
     </nav>
     <header>
@@ -59,13 +60,14 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+        <div class="error"></div>
         <h2>Compose Tweet</h2>
         <form action = "POST" method="/tweets" class="tweet-form">
           <textarea name="text" placeholder="What are you humming about?"></textarea>
           <div class="tweetbtn">
             <button class="button" type="submit">Tweet</button>
-          <span class="counter"></span>
-        </div>
+            <span class="counter"></span>
+          </div>
         </form>
       </section>
       <section id="tweets-container">
