@@ -2,7 +2,7 @@ $(document).ready(function() {
   let textArea = $("textarea");
   let maxLength = 140;
   $(".counter").text(maxLength);
-  textArea.on("keypress", e => {
+  textArea.on("keyup", e => {
     countChars = maxLength - textArea.val().length;
     if (countChars < 0) {
       $(".counter")

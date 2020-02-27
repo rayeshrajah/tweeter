@@ -1,14 +1,14 @@
+/*article css that creates style using flex and other goodies*/
 article.tweet{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: #f4f1ec;
   border-width: 5px;
   border-style: solid;
   margin-top: 40px;
   opacity: 0.4;
 }
-
+/**/
 article.tweet:hover{
     box-shadow: 10px 10px 5px grey;
     opacity: 1;
@@ -20,14 +20,19 @@ article.tweet header {
   justify-content: space-between;
   height: 150px;
   padding: 1.5em;
-  background-color: #f4f1ec;
   background: none;
 }
 article.tweet p {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  padding: 1em;
 }
+
+.imgAndName {
+  display: flex;
+  flex-direction: row;
+}
+
 article.tweet footer {
   display: flex;
   flex-direction: row;

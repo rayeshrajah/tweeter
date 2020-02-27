@@ -8,10 +8,11 @@ const server = "http://localhost:8080";
 //Creating an article for the tweets
 const createTweetElement = function(tweetData) {
   let $date = new Date(tweetData.created_at);
-  const $days = Math.floor($date / (20 * 60 * 60 * 1000));
-   
-  let $article = $('<article class =tweet>');
+  const $days = Math.floor($date / (1000 * 1000 * 60 * 60 * 24));
+   //Making the tweet article and all its components
+  let $article = $('<article class="tweet">');
   let $header = $('<header>');
+  let $imgPDiv = $('<div class="imgAndName">');
   let $pImg = $('<p>');
   let $img = $(`<img src=${tweetData.user.avatars}>`);
   let $heading1 = $('<h6>');
@@ -22,18 +23,18 @@ const createTweetElement = function(tweetData) {
   let $i1 = $('<i class="fas fa-flag"></i>');
   let $i2 = $('<i class="fas fa-retweet"></i>');
   let $i3 = $('<i class="fas fa-heart"></i>');
-
+//Filling in the data for the tag element from the database
   $pImg.text(tweetData.user.name);
   $heading1.text(tweetData.user.handle);
   $pContent.text(tweetData.content.text);
-  $heading2.text($days);
-
+  $heading2.text($days + ' days ago');
+//Making the tweet by appending all the elements we need.
     $article
     .append($header);
-    $header
+    $header.append($imgPDiv);
+    $imgPDiv
+    .append($img)
     .append($pImg);
-    $pImg
-    .append($img);
     $header
     .append($heading1);
     $article
@@ -68,7 +69,6 @@ const renderTweets = function(tweets) {
 
 $(".tweet-form").on("submit", function(event) {
     event.preventDefault();
-    // const formHandler = function(){
   $('.error').empty();
   $('.error').hide();
   const MAXLENGTH = 140;
@@ -84,7 +84,7 @@ $(".tweet-form").on("submit", function(event) {
     $('.error').slideDown("slow");  
     return;
   }
-  
+  //Ajax post request gets the data from the form and serializes it.
   $.ajax({
     method: "POST",
     url: `${server}/tweets`,
@@ -94,7 +94,8 @@ $(".tweet-form").on("submit", function(event) {
     }
   });
 });
-
+//Ajax get request that gives the 
+//tweets on the page without refreshing the page
 const loadTweets = function() {
     $.ajax({
     method: "GET",

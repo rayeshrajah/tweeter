@@ -1,13 +1,17 @@
+//jQuery function: At certain height of the window a 
+//button will fade in and fade out 
 $(window).scroll(function() {
     var height = $(window).scrollTop();
-    if (height > 50) {
-        $(".back2Top").fadeIn();
+    if (height > 500) {
+        $(".backTop").fadeIn();
     } else {
-        $(".back2Top").fadeOut();
+        $(".backTop").fadeOut();
     }
 });
+//When the button fadeIn a click action occures 
+//and bring it back to the top
 $(document).ready(function() {
-    $(".back2Top").click(function(event) {
+    $(".backTop").click(function(event) {
         event.preventDefault();
         $("html, body").animate({ scrollTop: 0 }, "slow");
         return false;
