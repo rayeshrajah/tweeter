@@ -27,3 +27,38 @@
     background-color: #555; /* Add a dark-grey background on hover */
   }
   
+
+  /* Another tablet breakpoint is maximum width of 1024px */
+  @media only screen and (min-width: 1024px) {
+   body{
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-start;
+   }
+   .profilehead{
+    width: 25%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+   }
+
+   .profilehead > img{
+    margin:auto;
+  }
+  
+   nav {
+    position: fixed;
+    font-family: "Bungee", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    top: 0;
+    width: 100%;
+    z-index: auto;
+    background-color: #4056a1;
+    background-image: none;
+    color: #ffff;
+    padding: 1.5em;
+  }
+}
