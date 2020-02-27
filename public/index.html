@@ -1,79 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-    
-    <!--Arrow Down Icon-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" type="text/css" />    
-    
-    <!--Link to the fonts from google, Fonts are Bungee and Source Sans Pro-->
-    <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300i,700i&display=swap" rel="stylesheet">
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    
-    <!--Nav CSS-->
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    
-    <!--Header CSS-->
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
 
-    <!--Main CSS-->
-    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+  <!--Arrow Down Icon-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    type="text/css" />
 
-    <!--New-Twitter CSS-->
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <!--Link to the fonts from google, Fonts are Bungee and Source Sans Pro-->
+  <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300i,700i&display=swap" rel="stylesheet">
 
-    <!--Tweet CSS-->
-    <link rel="stylesheet" href="/styles/tweet.css" type="text/css"/>
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!--Nav CSS-->
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
 
-    <!--Counter for textArea field-->
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-    
-    <!--Composer JS File that has a button to bring up the page to text area-->
-    <script type="text/javascript" src="/scripts/composer.js"></script>
-      
-  </head>
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <div class="mlogo">
+  <!--Header CSS-->
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+
+  <!--Main CSS-->
+  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+
+  <!--New-Twitter CSS-->
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
+  <!--Tweet CSS-->
+  <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
+
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!--Counter for textArea field-->
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+  <!--Composer JS File that has a button to bring up the page to text area-->
+  <script type="text/javascript" src="/scripts/composer.js"></script>
+
+</head>
+
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav>
+    <div class="mlogo">
       <span>tweeter</span>
     </div>
     <div class="icon">
       <span>Write a new tweet</span>
       <button class="iconbtn"><i class="fas fa-arrow-down"></i></button>
     </div>
-    </nav>
-    <header class="profilehead">
-          <img src="/images/profile-hex.png"> 
-          <h2>Your Name</h2>
+  </nav>
+  <header class="profilehead">
+    <img src="/images/profile-hex.png">
+    <h2>Your Name</h2>
   </header>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <div class="error"></div>
-        <h2>Compose Tweet</h2>
-        <form action = "POST" method="/tweets" class="tweet-form">
-          <textarea name="text" placeholder="What are you humming about?"></textarea>
-          <div class="tweetbtn">
-            <button class="button" type="submit">Tweet</button>
-            <span class="counter"></span>
-          </div>
-        </form>
-      </section>
-      <section id="tweets-container">
-      </section>
-    </main>
-    <!-- Client JS -->
-    <button class="backTop"><i class="fas fa-arrow-up"></i></button>
-
-    <script type="text/javascript" src="/scripts/client.js"></script>
-  </body>
+  <!-- Page-specific (main) content here -->
+  <main class="container">
+    <section class="new-tweet">
+      <div class="error"></div>
+      <h2>Compose Tweet</h2>
+      <form action="POST" method="/tweets" class="tweet-form">
+        <textarea name="text" placeholder="What are you humming about?"></textarea>
+        <div class="tweetbtn">
+          <button class="button" type="submit">Tweet</button>
+          <span class="counter"></span>
+        </div>
+      </form>
+    </section>
+    <section id="tweets-container">
+    </section>
+  </main>
+  <!-- Client JS -->
+  <button class="backTop"><i class="fas fa-arrow-up"></i></button>
+  <script type="text/javascript" src="/scripts/client.js"></script>
+</body>
 </html>

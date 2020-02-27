@@ -13,9 +13,11 @@ nav {
   color: #ffff;
   padding: 1.5em;
 }
+/*Setting the font for the nav logo*/
 .mlogo {
   font-family: "Bungee", sans-serif;
 }
+
 .icon{
   display: flex;
   flex-direction: column;

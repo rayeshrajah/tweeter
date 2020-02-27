@@ -6,7 +6,7 @@
   background-color: #ffe1b5;
   padding: 10px;
 }
-
+/*Button style for bringing the page back to the top*/
 .backTop {
   display: none; 
   position: fixed; 
@@ -21,10 +21,6 @@
   padding: 15px; 
   border-radius: 50%; 
   font-size: 30px; 
-}
-
-.backTop:hover {
-  background-color: #555; /* Add a dark-grey background on hover */
 }
 
 /* Another tablet breakpoint is maximum width of 1024px */

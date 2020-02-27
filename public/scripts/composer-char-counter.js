@@ -1,3 +1,7 @@
+/*Character counter function that takes a text area length and decreases
+while typing, if the user goes beyond the character count the it will turn 
+red*/
+
 $(document).ready(function() {
   let textArea = $("textarea");
   let maxLength = 140;
