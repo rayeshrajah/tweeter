@@ -2,7 +2,7 @@
 //button will fade in and fade out 
 $(window).scroll(function() {
     var height = $(window).scrollTop();
-    if (height > 500) {
+    if (height > 100) {
         $(".backTop").fadeIn();
     } else {
         $(".backTop").fadeOut();
