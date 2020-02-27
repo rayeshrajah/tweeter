@@ -1,6 +1,6 @@
 $(window).scroll(function() {
     var height = $(window).scrollTop();
-    if (height > 30) {
+    if (height > 50) {
         $(".back2Top").fadeIn();
     } else {
         $(".back2Top").fadeOut();
