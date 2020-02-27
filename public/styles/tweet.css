@@ -1,5 +1,5 @@
 /*article css that creates style using flex and other goodies*/
-article.tweet{
+article.tweet {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -8,10 +8,10 @@ article.tweet{
   margin-top: 40px;
   opacity: 0.4;
 }
-/**/
-article.tweet:hover{
-    box-shadow: 10px 10px 5px grey;
-    opacity: 1;
+/*article over for extra effects*/
+article.tweet:hover {
+  box-shadow: 10px 10px 5px grey;
+  opacity: 1;
 }
 
 article.tweet header {
@@ -42,4 +42,18 @@ article.tweet footer {
   border-top-width: 5px;
   margin-left: 20px;
   margin-right: 20px;
+}
+/*Article that displays and hides according to Compass. Handles and Tweet Icons*/
+article.tweet:hover > header > h6 {
+  display: block;
+}
+article.tweet > header > h6 {
+  display: none;
+}
+
+article.tweet:hover > footer > div {
+  display: block;
+}
+article.tweet > footer > div {
+  display: none;
 }

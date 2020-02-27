@@ -1,7 +1,8 @@
+/*Tweeet Container that that has a flex display*/
 .container {
     display: flex;
     justify-content: space-between;
-    font-family: 'Source Sans PRo', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 .new-tweet{
     display: flex;
@@ -24,7 +25,7 @@ border-color: black;
     justify-content: space-between;
     font-family: "Bungee", sans-serif;
 }
-
+/*Tweet button*/
 .button {
     background-color: #4056A1;
     ; /* Green */
@@ -39,7 +40,7 @@ border-color: black;
     transition-duration: 0.4s;
     cursor: pointer;
   }
-
+/*styles the error message*/
 .error{
     display: none;
     margin-top: 20px;
@@ -49,6 +50,7 @@ border-color: black;
     color: red;
     text-align: center;
 }
+/*word break wraps the word within the tweet container and does not overflow out*/
 .usertext{
     word-break: break-all;
 }

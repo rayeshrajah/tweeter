@@ -7,19 +7,21 @@ const server = "http://localhost:8080";
 
 //Creating an article for the tweets
 const createTweetElement = function(tweetData) {
-  let $date = new Date(tweetData.created_at);
-  const $days = Math.floor($date / (1000 * 1000 * 60 * 60 * 24));
+  let $date1 = new Date(tweetData.created_at);
+  let $date2 = new Date();
+  let $originalDate = Math.floor((($date2.getTime() -  $date1.getTime()) / (1000 * 60 * 60 * 20)));
+
    //Making the tweet article and all its components
   let $article = $('<article class="tweet">');
   let $header = $('<header>');
   let $imgPDiv = $('<div class="imgAndName">');
   let $pImg = $('<p>');
   let $img = $(`<img src=${tweetData.user.avatars}>`);
-  let $heading1 = $('<h6>');
+  let $heading1 = $('<h6 class="userhandle">');
   let $pContent = $('<p class="usertext">');
   let $footer = $('<footer>');
   let $heading2 = $('<h6>');
-  let $div = $('<div>');
+  let $div = $('<div class="tweeticons">');
   let $i1 = $('<i class="fas fa-flag"></i>');
   let $i2 = $('<i class="fas fa-retweet"></i>');
   let $i3 = $('<i class="fas fa-heart"></i>');
@@ -27,7 +29,7 @@ const createTweetElement = function(tweetData) {
   $pImg.text(tweetData.user.name);
   $heading1.text(tweetData.user.handle);
   $pContent.text(tweetData.content.text);
-  $heading2.text($days + ' days ago');
+  $heading2.text($originalDate + ' days ago');
 //Making the tweet by appending all the elements we need.
     $article
     .append($header);
@@ -114,3 +116,17 @@ $('textarea').each(function () {
     this.style.height = 'auto';
     this.style.height = (this.scrollHeight) + 'px';
   });
+
+//Hover function jQuery
+// $("article").mouseover(function () {
+//   $('.tweeticons').show();
+// });
+// $("article").mouseout(function () { 
+//   $('.tweeticons').hide();
+// });
+// $("article").mouseover(function () {
+//   $('.userhandle').show();
+// });
+// $(".article").mouseout(function () { 
+//   $('.userhandle').hide();
+// });
