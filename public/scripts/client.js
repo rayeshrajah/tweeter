@@ -118,3 +118,7 @@ $("textarea")
     this.style.height = "auto";
     this.style.height = this.scrollHeight + "px";
   });
+
+  $(document).ready(function () {
+    $(".new-tweet").hide();
+});
